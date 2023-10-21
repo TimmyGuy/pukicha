@@ -1,0 +1,88 @@
+Pre-disclaimer:
+Het spel en alle teksten zijn in het Engels. De handleiding is in het Nederlands als per de opdracht.
+Makefile is aangepast om spel te hernoemen naar game.
+
+Spel: Pukicha
+
+Opstartcommando: ./game
+
+Het spel is gebaseerd op het spel Pokémon, maar in kleinere schaal.
+Bij het opstarten van het spel, komt er een vierkant kader in je terminal. Zorg er voor dat je alle vier
+de randen goed kan zien. Je terminal mag groter zijn dan het kader, maar niet kleiner. Als je de randen
+niet goed kan zien, dan kan het zijn dat je het spel niet goed kan spelen. Je kan tijdens de start van het spel
+je terminal grootte makkelijk aanpassen. Voor dit spel is het belangrijk dat je terminal kleuren ondersteunt!
+
+Wanneer je de terminal op de juiste grootte hebt, kan je beginnen met het spel. Je kan het spel starten door
+een toets in te drukken. Je kan het spel stoppen met 'ctrl + c'.
+
+Het spel:
+ Loop over de map heen tot je tegen een tegenstander aanloopt. Wanneer je tegen een tegenstander aanloopt,
+ dan kan je kiezen om te rennen of te vechten. Als je kiest om te rennen, dan ren je weg van de tegenstander.
+ Als je kiest om te vechten, dan ga je het gevecht aan met de tegenstander. Als je het gevecht wint, dan
+ krijg je een level omhoog en krijg je een nieuwe tegenstander. Als je het gevecht verliest, begin je weer
+ vanaf het begin.
+
+De speler:
+ Je kan jouw character herkennen als een groene '*' in het spel. Je kan je character bewegen met de pijltjestoetsen.
+ Je begint met je huisdier (pokémon) Pikachu. Deze begint met 9 HP, 3 aanvallen en 1 schild.
+ Aanvallen:
+    - Charm: 2 damage
+    - Badjazzl: 1 damage
+    - Electro: 3 damage
+
+Tegenstanders:
+ Je kan tegenstanders herkennen als een rood character in het spel. Er zijn momenteel 3 tegenstander:
+    Wurmsel:
+      Symbool: '~'
+      HP: 5 * speler level
+      Aanvallen:
+        - Squiqqle: 2 damage * speler level
+        - Sqreek: 1 damage * speler level
+        - Hellwater: 3 damage * speler level
+    Bat:
+          Symbool: '^'
+          HP: 7 * speler level
+          Aanvallen:
+            - Echo: 2 damage * speler level
+            - Rush: 1 damage * speler level
+            - Covid: 3 damage * speler level
+    Pikachu:
+          Symbool: '&'
+          HP: 9 * speler level
+          Aanvallen:
+            - Charm: 2 damage * speler level
+            - Badjazzl: 1 damage * speler level
+            - Electro: 3 damage * speler level
+
+Toetsen:
+ In wereld:
+  - '↑' om naar boven te gaan
+  - '↓' om naar beneden te gaan
+  - '←' om naar links te gaan
+  - '→' om naar rechts te gaan
+
+ Tijdens ontmoeting:
+  - 'r' om te rennen
+  - 'f' om te vechten
+
+ Tijdens gevecht:
+  - '1' voor aanval 1
+  - '2' voor aanval 2
+  - '3' voor aanval 3
+  - '4' om je schild te gebruiken
+
+  Bij gewonnen of verloren:
+   - Alle toetsen om terug te gaan naar de wereld
+
+Geavanceerd:
+ Vind je het spel leuk, maar wil je meer tegenstanders? Het spel is dynamisch gemaakt dus je kan makkelijk
+ nieuwe tegenstanders of meer tegenstanders toevoegen.
+
+ Nieuwe tegenstanders kan je toevoegen in 'creature.c'. Voeg hier een nieuwe creature toe met een naam, en voeg
+ deze naam toe aan de #define CREATURE_LIST.
+
+ Een andere map? Je kan map.txt aanpassen naar een andere map. Zorg er wel voor dat de map een recht kader is.
+ Gebruik alleen ' ' voor lege plekken en '#' voor muren.
+
+ Te weinig tegenstanders? Binnen 'controller.h' is een #define MAX_CREATURES. Deze kan je aanpassen naar een
+ hoger getal.
