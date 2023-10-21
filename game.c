@@ -374,7 +374,13 @@ int main(void) {
         exit(1);
     }
 
-    map *mp = map_init(fh);
+    FILE *spawn_fh = fopen("assets/spawn-locations.txt", "r");
+    if (spawn_fh == NULL) {
+        perror("Can not open spawn file\n");
+        exit(1);
+    }
+
+    map *mp = map_init(fh, spawn_fh);
     fclose(fh);
     player *pp = player_init();
 

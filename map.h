@@ -26,7 +26,7 @@ typedef struct  map_data map;
  * @param fh The file handler to a .txt map file
  * @return A map struct
  */
-map *map_init(FILE *fh);
+map *map_init(FILE *fh, FILE *spawn_fh);
 
 /**
  * Get the amount of columns the map has
@@ -75,6 +75,8 @@ char get_position(map *mp, int x, int y);
  * @return A boolean, 1 if space is empty, 0 if space is not empty
  */
 int is_move_okay(map *mp, int x, int y);
+
+int is_spawn_okay(map *mp, int x, int y, char c);
 
 /**
  * Replaces the current character on (x,y) on the map with the new given character
