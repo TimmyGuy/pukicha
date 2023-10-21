@@ -107,7 +107,8 @@ creature *creature_init(creature name) {
 
 creature *spawn(map *mp, double xp) {
     creature creature_list[] = CREATURE_LIST;
-    int creature_to_spawn = rand() % 3;
+    int creature_list_length = sizeof(creature_list) / sizeof(creature_list[0]);
+    int creature_to_spawn = rand() % creature_list_length;
     creature *cp = creature_init(creature_list[creature_to_spawn]);
 
     // Increase game difficulty

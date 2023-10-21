@@ -1,6 +1,8 @@
 Pre-disclaimer:
 Het spel en alle teksten zijn in het Engels. De handleiding is in het Nederlands als per de opdracht.
-Makefile is aangepast om spel te hernoemen naar game.
+Makefile is aangepast om spel te hernoemen naar game. Dit is de kleine versie, maar een uitgebreidere
+versie die ik nog aan doorontwikkelen ben is te vinden op https://github.com/TimmyGuy/pukicha/tree/1.0.0.
+Deze bevat nog te veel bugs om te gebruiken voor de opdracht, maar is wel leuk om te spelen.
 
 Spel: Pukicha
 
