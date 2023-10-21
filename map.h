@@ -26,7 +26,7 @@ typedef struct  map_data map;
  * @param fh The file handler to a .txt map file
  * @return A map struct
  */
-map *map_init(FILE *fh);
+map *map_init(FILE *fh, FILE *spawn_fh);
 
 /**
  * Get the amount of columns the map has

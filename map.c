@@ -10,6 +10,7 @@
 
 struct map_data {
     char grid[MAX_MAP_SIZE];
+    char spawn_locations[MAX_MAP_SIZE];
     int cols;
     int rows;
 };
@@ -58,8 +59,9 @@ int char_count(char *str, char needle) {
     return count;
 }
 
-map *map_init(FILE *fh) {
+map *map_init(FILE *fh, FILE *spawn_fh) {
     if (fh == NULL || !fh) return NULL;
+    if (spawn_fh == NULL || !spawn_fh) return NULL;
 
     char temp_map[MAX_MAP_SIZE];
     size_t map_size = fread(temp_map, 1, MAX_MAP_SIZE, fh);
@@ -69,7 +71,14 @@ map *map_init(FILE *fh) {
 
     map new_map = {0};
 
+    char temp_spawn_map[MAX_MAP_SIZE];
+    size_t spawn_map_size = fread(temp_spawn_map, 1, MAX_MAP_SIZE, spawn_fh);
+
+    if (spawn_map_size < 1) return NULL;
+    temp_spawn_map[spawn_map_size] = '\0';
+
     strcpy(new_map.grid, temp_map);
+    strcpy(new_map.spawn_locations, temp_spawn_map);
     new_map.cols = str_pos(new_map.grid, EOL);
     new_map.rows = char_count(new_map.grid, EOL);
 
