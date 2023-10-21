@@ -76,6 +76,8 @@ char get_position(map *mp, int x, int y);
  */
 int is_move_okay(map *mp, int x, int y);
 
+int is_spawn_okay(map *mp, int x, int y, char c);
+
 /**
  * Replaces the current character on (x,y) on the map with the new given character
  *

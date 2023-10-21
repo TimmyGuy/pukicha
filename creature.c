@@ -124,7 +124,7 @@ creature *spawn(map *mp, double xp) {
         int spawn_location = rand() % map_length;
         x = spawn_location % get_cols(mp);
         y = spawn_location / get_cols(mp);
-    } while (!is_move_okay(mp, x, y));
+    } while (!is_spawn_okay(mp, x, y, cp->symbol) || !is_move_okay(mp, x, y));
 
     cp->pos_y = y;
     cp->pos_x = x;

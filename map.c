@@ -121,6 +121,11 @@ int is_move_okay(map *mp, int x, int y) {
     return (testch & A_CHARTEXT) == ' ';
 }
 
+int is_spawn_okay(map *mp, int x, int y, char c) {
+    char testch = mp->spawn_locations[get_index(mp, x, y)];
+    return (testch & A_CHARTEXT) == (unsigned int) c;
+}
+
 int is_move_encounter(map *mp, int x, int y) {
     char testch = get_position(mp, x, y);
 
